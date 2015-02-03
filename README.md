@@ -1,0 +1,1 @@
+# gradle-schema-compiler
