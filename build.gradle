@@ -1,0 +1,27 @@
+version = "0.0.1"
+description = 'A wrapper around the xjc command that enables compiling xsd and dtd files'
+group = 'org.xsimple.gradle.plugin'
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+sourceCompatibility = '1.6'
+targetCompatibility = '1.6'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile "commons-io:commons-io:2.4"
+
+    testCompile('org.spockframework:spock-core:0.7-groovy-2.0') {
+        exclude module: 'groovy-all'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
